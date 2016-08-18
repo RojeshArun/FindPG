@@ -13,7 +13,8 @@ import android.widget.Button;
 public class HomeActivity extends AppCompatActivity implements View.OnClickListener {
 
     //UI Variables
-    private Button mLogin;
+    private Button mLogin,mGuestBtn;
+    private Intent commonIntent;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -26,23 +27,34 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
     private void initListeners() {
         mLogin.setOnClickListener(this);
+        mGuestBtn.setOnClickListener(this);
     }
 
     private void initLoginScreen() {
         mLogin = (Button) findViewById(R.id.btn_login);
+        mGuestBtn = (Button) findViewById(R.id.btn_guest);
+
     }
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.btn_login:
                 gotoLoginScreen();
+                break;
+            case R.id.btn_guest:
+                gotoGuestPGSearch();
                 break;
         }
     }
 
+    private void gotoGuestPGSearch() {
+        commonIntent = new Intent(HomeActivity.this, LoginActivity.class);
+        startActivity(commonIntent);
+    }
+
     private void gotoLoginScreen() {
-        Intent loginIntent = new Intent(HomeActivity.this,LoginActivity.class);
-        startActivity(loginIntent);
+        commonIntent = new Intent(HomeActivity.this, ContainerActivity.class);
+        startActivity(commonIntent);
     }
 }
