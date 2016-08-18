@@ -22,7 +22,7 @@
  * THE SOFTWARE.
  */
 
-package pg.customviews;
+package pg.guest.findpg.customviews;
 
 import android.content.Context;
 import android.content.res.TypedArray;

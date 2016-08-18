@@ -5,7 +5,7 @@
     android:layout_margin="@dimen/xlarge_padding"
     android:gravity="center">
 
-    <pg.customviews.RippleView
+    <pg.guest.findpg.customviews.RippleView
         android:id="@+id/rpl_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -18,10 +18,10 @@
             android:textColor="@color/colorPrimaryDark"
             android:textStyle="bold" />
 
-    </pg.customviews.RippleView>
+    </pg.guest.findpg.customviews.RippleView>
 
 
-    <pg.customviews.RippleView
+    <pg.guest.findpg.customviews.RippleView
         android:id="@+id/rpl_guest_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -35,10 +35,10 @@
             android:layout_height="wrap_content"
             android:text="@string/login" />
 
-    </pg.customviews.RippleView>
+    </pg.guest.findpg.customviews.RippleView>
 
 
-    <pg.customviews.RippleView
+    <pg.guest.findpg.customviews.RippleView
         android:id="@+id/rpl_new_user"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -52,10 +52,10 @@
             android:layout_height="wrap_content"
             android:text="@string/new_user" />
 
-    </pg.customviews.RippleView>
+    </pg.guest.findpg.customviews.RippleView>
 
 
-    <pg.customviews.RippleView
+    <pg.guest.findpg.customviews.RippleView
         android:id="@+id/rpl_fb"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -72,6 +72,6 @@
             android:textSize="@dimen/text_size"
             android:textStyle="bold" />
 
-    </pg.customviews.RippleView>
+    </pg.guest.findpg.customviews.RippleView>
 
 </RelativeLayout>

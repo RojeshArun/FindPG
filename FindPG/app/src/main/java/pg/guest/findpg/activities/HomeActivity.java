@@ -1,4 +1,4 @@
-package pg.guest.findpg;
+package pg.guest.findpg.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,6 +6,8 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+
+import pg.guest.findpg.R;
 
 /**
  * Created by ADMIN on 08-08-2016.
@@ -33,7 +35,6 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     private void initLoginScreen() {
         mLogin = (Button) findViewById(R.id.btn_login);
         mGuestBtn = (Button) findViewById(R.id.btn_guest);
-
     }
 
     @Override
@@ -45,16 +46,18 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn_guest:
                 gotoGuestPGSearch();
                 break;
+            default:
+                break;
         }
     }
 
     private void gotoGuestPGSearch() {
-        commonIntent = new Intent(HomeActivity.this, LoginActivity.class);
+        commonIntent = new Intent(HomeActivity.this, ContainerActivity.class);
         startActivity(commonIntent);
     }
 
     private void gotoLoginScreen() {
-        commonIntent = new Intent(HomeActivity.this, ContainerActivity.class);
+        commonIntent = new Intent(HomeActivity.this, LoginActivity.class);
         startActivity(commonIntent);
     }
 }

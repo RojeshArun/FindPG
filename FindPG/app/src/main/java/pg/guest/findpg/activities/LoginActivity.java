@@ -1,4 +1,4 @@
-package pg.guest.findpg;
+package pg.guest.findpg.activities;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -28,6 +28,8 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import pg.guest.findpg.R;
 
 
 /**

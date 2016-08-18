@@ -1,4 +1,4 @@
-package pg.guest.findpg;
+package pg.guest.findpg.activities;
 
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -12,10 +12,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
+import pg.guest.findpg.activities.dummy.DummyContent;
+import pg.guest.findpg.fragments.FragmentA;
+import pg.guest.findpg.R;
+import pg.guest.findpg.fragments.PgFragment;
+
 /**
  * Created by Rojesh on 17-08-2016.
  */
-public class ContainerActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class ContainerActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener ,PgFragment.OnListFragmentInteractionListener {
 
     private FragmentManager mFragmentManager;
     private FragmentTransaction mFragmentTransaction;
@@ -55,9 +60,10 @@ public class ContainerActivity extends AppCompatActivity implements NavigationVi
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        if (id == R.id.nav_food) {
+            mGeneralFragment = new PgFragment();
+            addFragment(false);
+        } else if (id == R.id.nav_services) {
 
         } else if (id == R.id.nav_slideshow) {
 
@@ -85,5 +91,10 @@ public class ContainerActivity extends AppCompatActivity implements NavigationVi
             mFragmentTransaction.addToBackStack(mFragmentManager.getClass().getName()).commit();
         else
             mFragmentTransaction.commit();
+    }
+
+    @Override
+    public void onListFragmentInteraction(DummyContent.DummyItem item) {
+
     }
 }
