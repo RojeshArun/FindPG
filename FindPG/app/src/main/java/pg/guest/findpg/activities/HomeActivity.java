@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 import pg.guest.findpg.R;
+import pg.guest.findpg.Utils.StaticUtils;
 
 /**
  * Created by ADMIN on 08-08-2016.
@@ -15,7 +16,7 @@ import pg.guest.findpg.R;
 public class HomeActivity extends AppCompatActivity implements View.OnClickListener {
 
     //UI Variables
-    private Button mLogin,mGuestBtn;
+    private Button mLogin,mGuestBtn,mNewUserBtn;
     private Intent commonIntent;
 
     @Override
@@ -30,11 +31,13 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     private void initListeners() {
         mLogin.setOnClickListener(this);
         mGuestBtn.setOnClickListener(this);
+        mNewUserBtn.setOnClickListener(this);
     }
 
     private void initLoginScreen() {
         mLogin = (Button) findViewById(R.id.btn_login);
         mGuestBtn = (Button) findViewById(R.id.btn_guest);
+        mNewUserBtn = (Button) findViewById(R.id.btn_new_user);
     }
 
     @Override
@@ -46,17 +49,28 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn_guest:
                 gotoGuestPGSearch();
                 break;
+            case R.id.btn_new_user:
+                gotoNewUserRegisteration();
+                break;
             default:
                 break;
         }
     }
 
+    private void gotoNewUserRegisteration() {
+        StaticUtils.IS_GUEST_LOGIN = false;
+        commonIntent = new Intent(HomeActivity.this, ContainerActivity.class);
+        startActivity(commonIntent);
+    }
+
     private void gotoGuestPGSearch() {
+        StaticUtils.IS_GUEST_LOGIN = true;
         commonIntent = new Intent(HomeActivity.this, ContainerActivity.class);
         startActivity(commonIntent);
     }
 
     private void gotoLoginScreen() {
+
         commonIntent = new Intent(HomeActivity.this, LoginActivity.class);
         startActivity(commonIntent);
     }

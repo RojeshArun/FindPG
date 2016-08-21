@@ -38,9 +38,9 @@ public class MypgRecyclerViewAdapter extends RecyclerView.Adapter<MypgRecyclerVi
 
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
-        holder.mItem = mValues.get(position);
+        /*holder.mItem = mValues.get(position);
         holder.mIdView.setText(mValues.get(position).id);
-        holder.mContentView.setText(mValues.get(position).content);
+        holder.mContentView.setText(mValues.get(position).content);*/
 
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,8 +68,8 @@ public class MypgRecyclerViewAdapter extends RecyclerView.Adapter<MypgRecyclerVi
         public ViewHolder(View view) {
             super(view);
             mView = view;
-            mIdView = (TextView) view.findViewById(R.id.id);
-            mContentView = (TextView) view.findViewById(R.id.content);
+            mIdView = (TextView) view.findViewById(R.id.lbl_pgname);
+            mContentView = (TextView) view.findViewById(R.id.lbl_pgtype);
         }
 
         @Override

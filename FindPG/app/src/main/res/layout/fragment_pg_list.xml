@@ -6,8 +6,7 @@
     android:name="pg.guest.findpg.activities.pgFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginLeft="16dp"
-    android:layout_marginRight="16dp"
+    android:layout_margin="@dimen/padding"
     app:layoutManager="LinearLayoutManager"
     tools:context=".fragments.PgFragment"
     tools:listitem="@layout/fragment_pg" />

@@ -1,17 +1,23 @@
 package pg.guest.findpg.activities;
 
+import android.app.SearchManager;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
+import android.text.TextUtils;
+import android.view.Menu;
 import android.view.MenuItem;
 
+import pg.guest.findpg.Utils.StaticUtils;
 import pg.guest.findpg.activities.dummy.DummyContent;
 import pg.guest.findpg.fragments.FragmentA;
 import pg.guest.findpg.R;
@@ -41,6 +47,22 @@ public class ContainerActivity extends AppCompatActivity implements NavigationVi
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        
+        setFirstFragment();
+
+    }
+
+    public void setFragmentTitle(String title) {
+        if(!TextUtils.isEmpty(title))
+            setTitle(title);
+    }
+
+    private void setFirstFragment() {
+        if(StaticUtils.IS_GUEST_LOGIN)
+            mGeneralFragment = new PgFragment();
+        else
+            mGeneralFragment = new FragmentA();
+        addFragment(false);
     }
 
     @Override
@@ -95,6 +117,22 @@ public class ContainerActivity extends AppCompatActivity implements NavigationVi
 
     @Override
     public void onListFragmentInteraction(DummyContent.DummyItem item) {
+
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        if(StaticUtils.IS_GUEST_LOGIN){
+            getMenuInflater().inflate(R.menu.main, menu);
+            // Retrieve the SearchView and plug it into SearchManager
+            final SearchView searchView = (SearchView) MenuItemCompat.getActionView(menu.findItem(R.id.action_search));
+            SearchManager searchManager = (SearchManager) getSystemService(SEARCH_SERVICE);
+            searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
+
+            return true;
+        }else{
+            return super.onCreateOptionsMenu(menu);
+        }
 
     }
 }

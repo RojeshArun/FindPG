@@ -11,6 +11,7 @@
         android:layout_height="wrap_content">
 
         <Button
+            android:id="@+id/btn_guest"
             style="@style/Your.Button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -46,7 +47,7 @@
         android:layout_marginTop="@dimen/padding">
 
         <Button
-            android:id="@+id/btn_guest"
+            android:id="@+id/btn_new_user"
             style="@style/Your.Button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

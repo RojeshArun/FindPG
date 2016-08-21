@@ -1,20 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+
+    android:background="@android:drawable/dialog_holo_light_frame"
     android:orientation="horizontal">
 
+    <pg.guest.findpg.customviews.CircleImageView
+        android:id="@+id/img_pg"
+        android:layout_width="120dp"
+        android:padding="@dimen/micro_padding"
+        android:layout_height="120dp"
+        android:src="@drawable/pg" />
+
     <TextView
-        android:id="@+id/id"
+        android:id="@+id/lbl_pgname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/text_margin"
+        android:layout_toLeftOf="@+id/img_gender"
+        android:layout_marginTop="@dimen/padding"
+        android:layout_toRightOf="@+id/img_pg"
+        android:padding="@dimen/micro_padding"
+        android:text="Chamundeswari PG"
+        android:textAppearance="?attr/textAppearanceListItem"
+        android:textSize="@dimen/small_text_size" />
+
+    <ImageView
+        android:id="@+id/img_gender"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/gender_female_48" />
+
+    <TextView
+        android:id="@+id/lbl_pgtype"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/lbl_pgname"
+        android:layout_below="@+id/lbl_pgname"
+        android:padding="@dimen/micro_padding"
+        android:text="South Indian"
         android:textAppearance="?attr/textAppearanceListItem" />
 
     <TextView
-        android:id="@+id/content"
+        android:id="@+id/lbl_sharing_type"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/text_margin"
-        android:textAppearance="?attr/textAppearanceListItem" />
-</LinearLayout>
+        android:layout_alignRight="@+id/lbl_beds_status"
+        android:padding="@dimen/micro_padding"
+        android:layout_alignBottom="@+id/img_pg"
+        android:text="Two Sharing" />
+
+    <TextView
+        android:id="@+id/lbl_beds_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_above="@id/lbl_sharing_type"
+        android:padding="@dimen/micro_padding"
+        android:text="3 Beds available" />
+</RelativeLayout>
