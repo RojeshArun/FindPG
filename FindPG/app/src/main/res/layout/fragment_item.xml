@@ -2,23 +2,22 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-
     android:background="@android:drawable/dialog_holo_light_frame"
     android:orientation="horizontal">
 
     <pg.guest.findpg.customviews.CircleImageView
         android:id="@+id/img_pg"
         android:layout_width="120dp"
-        android:padding="@dimen/micro_padding"
         android:layout_height="120dp"
+        android:padding="@dimen/micro_padding"
         android:src="@drawable/pg" />
 
     <TextView
         android:id="@+id/lbl_pgname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toLeftOf="@+id/img_gender"
         android:layout_marginTop="@dimen/padding"
+        android:layout_toLeftOf="@+id/img_gender"
         android:layout_toRightOf="@+id/img_pg"
         android:padding="@dimen/micro_padding"
         android:text="Chamundeswari PG"
@@ -46,17 +45,29 @@
         android:id="@+id/lbl_sharing_type"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/img_pg"
         android:layout_alignRight="@+id/lbl_beds_status"
         android:padding="@dimen/micro_padding"
-        android:layout_alignBottom="@+id/img_pg"
         android:text="Two Sharing" />
 
     <TextView
         android:id="@+id/lbl_beds_status"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
         android:layout_above="@id/lbl_sharing_type"
+        android:layout_alignParentRight="true"
         android:padding="@dimen/micro_padding"
         android:text="3 Beds available" />
+
+    <Button
+        android:id="@+id/btn_book"
+        style="@style/Base.Widget.AppCompat.Button.Small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/img_pg"
+        android:layout_toRightOf="@+id/img_pg"
+        android:text="@string/book"
+        android:layout_marginLeft="@dimen/padding"
+        android:textSize="11sp"
+        android:textStyle="bold" />
 </RelativeLayout>

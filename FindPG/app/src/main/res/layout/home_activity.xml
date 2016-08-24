@@ -75,4 +75,24 @@
 
     </pg.guest.findpg.customviews.RippleView>
 
+    <pg.guest.findpg.customviews.RippleView
+        android:id="@+id/rpl_gplus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rpl_fb"
+        android:layout_marginTop="@dimen/medium_padding">
+
+        <Button
+            android:id="@+id/btn_gplu"
+            style="@style/AlertDialog.AppCompat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/google_signin"
+            android:text="@string/login_with_facebook"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_size"
+            android:textStyle="bold" />
+
+    </pg.guest.findpg.customviews.RippleView>
+
 </RelativeLayout>
