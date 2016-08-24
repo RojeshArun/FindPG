@@ -83,16 +83,18 @@ Calendar calendar=Calendar.getInstance();
                 mYear=calendar.get(Calendar.YEAR);
                 mMonth=calendar.get(Calendar.MONTH);
                 mDay=calendar.get(Calendar.DAY_OF_MONTH);
-                DatePickerDialog datePickerDialog=new DatePickerDialog(SignUp.this, new DatePickerDialog.OnDateSetListener() {
-                    @Override
-                    public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-                        age.setText(dayOfMonth+"-"+(monthOfYear+1)+"-"+year);
-                    }
-                },mYear,mMonth,mDay);
+                DatePickerDialog datePickerDialog=new DatePickerDialog(SignUp.this,datePickerListener ,mYear,mMonth,mDay);
+datePickerDialog.getDatePicker().setMaxDate(System.currentTimeMillis());
                 datePickerDialog.show();
          
             }
         });
+ DatePickerDialog.OnDateSetListener datePickerListener=new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                        age.setText(dayOfMonth+"-"+(monthOfYear+1)+"-"+year);
+                    }
+                };
         ArrayAdapter proofAdapter=new ArrayAdapter(this,android.R.layout.simple_spinner_item,proofType);
         proofAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         guestProof.setAdapter(proofAdapter);
