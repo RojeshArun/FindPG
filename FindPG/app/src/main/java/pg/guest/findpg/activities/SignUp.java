@@ -65,7 +65,7 @@ public class SignUp extends Activity implements View.OnClickListener {
         age.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder ageDialog= new AlertDialog.Builder(SignUp.this);
+                /*AlertDialog.Builder ageDialog= new AlertDialog.Builder(SignUp.this);
                 ageDialog.setTitle("Choose your Age");
                 String[] dummyAges={"18","19","20","21","22","23","24","25","26","27","28","29","30","31","32",};
                 final ArrayAdapter<String> ageAdapter=new ArrayAdapter<String>(SignUp.this,android.R.layout.select_dialog_singlechoice,dummyAges);
@@ -77,7 +77,20 @@ public class SignUp extends Activity implements View.OnClickListener {
                     }
                 });
                 AlertDialog dialog=ageDialog.create();
-                dialog.show();
+                dialog.show();*/
+Calendar calendar=Calendar.getInstance();
+                int mYear,mMonth,mDay;
+                mYear=calendar.get(Calendar.YEAR);
+                mMonth=calendar.get(Calendar.MONTH);
+                mDay=calendar.get(Calendar.DAY_OF_MONTH);
+                DatePickerDialog datePickerDialog=new DatePickerDialog(SignUp.this, new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                        age.setText(dayOfMonth+"-"+(monthOfYear+1)+"-"+year);
+                    }
+                },mYear,mMonth,mDay);
+                datePickerDialog.show();
+         
             }
         });
         ArrayAdapter proofAdapter=new ArrayAdapter(this,android.R.layout.simple_spinner_item,proofType);
