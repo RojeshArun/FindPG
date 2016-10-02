@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/xlarge_padding"
+    android:gravity="center">
+
+    <pg.guest.findpg.customviews.RippleView
+        android:id="@+id/rpl_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btn_guest"
+            style="@style/Your.Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Guest"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold" />
+
+    </pg.guest.findpg.customviews.RippleView>
+
+
+    <pg.guest.findpg.customviews.RippleView
+        android:id="@+id/rpl_guest_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rpl_login"
+        android:layout_marginTop="@dimen/padding">
+
+        <Button
+             android:id="@+id/btn_login"
+            style="@style/Your.Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/login" />
+
+    </pg.guest.findpg.customviews.RippleView>
+
+
+    <pg.guest.findpg.customviews.RippleView
+        android:id="@+id/rpl_new_user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rpl_guest_login"
+        android:layout_marginTop="@dimen/padding">
+
+        <Button
+            android:id="@+id/btn_new_user"
+            style="@style/Your.Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/new_user" />
+
+    </pg.guest.findpg.customviews.RippleView>
+
+
+    <pg.guest.findpg.customviews.RippleView
+        android:id="@+id/rpl_fb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rpl_new_user"
+        android:layout_marginTop="@dimen/medium_padding">
+
+        <Button
+            style="@style/AlertDialog.AppCompat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_fb"
+            android:text="@string/login_with_facebook"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_size"
+            android:textStyle="bold" />
+
+    </pg.guest.findpg.customviews.RippleView>
+
+    <pg.guest.findpg.customviews.RippleView
+        android:id="@+id/rpl_gplus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rpl_fb"
+        android:layout_marginTop="@dimen/medium_padding">
+
+        <Button
+            android:id="@+id/btn_gplu"
+            style="@style/AlertDialog.AppCompat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/google_signin"
+            android:text="@string/login_with_facebook"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_size"
+            android:textStyle="bold" />
+
+    </pg.guest.findpg.customviews.RippleView>
+
+</RelativeLayout>

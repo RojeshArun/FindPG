@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">FindPG</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="login">Login</string>
+    <string name="new_user">New user</string>
+    <string name="login_with_facebook">Login With Facebook</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="search">Search</string>
+    <string name="book">Book</string>
+    <string name="enter_name">Enter name</string>
+    <string name="gender">Gender :</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="date_of_birth">Date Of Birth</string>
+    <string name="enter_phone_number">Enter phone number</string>
+    <string name="enter_email_address">Enter Email Address</string>
+    <string name="id_proof">ID Proof</string>
+    <string name="veg">Veg</string>
+    <string name="non_veg">Non-Veg</string>
+    <string name="eggyterian">Eggyterian</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="guest_singup">Guest Sign Up</string>
+    <string name="enter_your_occupation">Enter your occupation</string>
+    <string name="enter_emergency_contact_number">Enter emergency contact number</string>
+    <string name="make_my_stay">Make My Stay</string>
+    <string name="feedback_other"><![CDATA[Feedback & Other]]></string>
+    <string name="services">Services</string>
+    <string name="accommodation">Accommodation</string>
+    <string name="today_s_menu">Today\'s Menu</string>
+</resources>
