@@ -17,10 +17,12 @@ import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.LinearLayout;
 
 import pg.guest.findpg.Utils.StaticUtils;
 import pg.guest.findpg.activities.dummy.DummyContent;
-import pg.guest.findpg.fragments.FragmentA;
+import pg.guest.findpg.fragments.FoodFragment;
+import pg.guest.findpg.fragments.HomeFragment;
 import pg.guest.findpg.R;
 import pg.guest.findpg.fragments.GuestSignUpFormFragment;
 import pg.guest.findpg.fragments.PgFragment;
@@ -35,6 +37,7 @@ public class ContainerActivity extends AppCompatActivity implements
     private FragmentManager mFragmentManager;
     private FragmentTransaction mFragmentTransaction;
     private Fragment mGeneralFragment;
+    private LinearLayout mProgressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,8 +56,19 @@ public class ContainerActivity extends AppCompatActivity implements
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        mProgressBar = (LinearLayout) findViewById(R.id.progressbar);
+        showProgressBar();
+        hideProgressBar();
         setFirstFragment();
 
+    }
+
+    public void hideProgressBar() {
+        mProgressBar.setVisibility(View.GONE);
+    }
+
+    public void showProgressBar() {
+        mProgressBar.setVisibility(View.VISIBLE);
     }
 
     public void setFragmentTitle(String title) {
@@ -66,7 +80,7 @@ public class ContainerActivity extends AppCompatActivity implements
         if (StaticUtils.IS_GUEST_LOGIN)
             mGeneralFragment = new PgFragment();
         else
-            mGeneralFragment = new FragmentA();
+            mGeneralFragment = new HomeFragment();
         addFragment(false);
     }
 
@@ -88,10 +102,10 @@ public class ContainerActivity extends AppCompatActivity implements
         int id = item.getItemId();
 
         if (id == R.id.nav_food) {
-            invalidateOptionsMenu();
-            menu.findItem(R.id.action_search).setVisible(false);
-            mGeneralFragment = new PgFragment();
-            addFragment(false);
+          /*  invalidateOptionsMenu();
+            menu.findItem(R.id.action_search).setVisible(false);*/
+            mGeneralFragment = new FoodFragment();
+            addFragment(true);
         } else if (id == R.id.nav_services) {
 
         } else if (id == R.id.nav_slideshow) {
@@ -100,10 +114,8 @@ public class ContainerActivity extends AppCompatActivity implements
 
         } else if (id == R.id.nav_share) {
 
-            mGeneralFragment = new FragmentA();
+            mGeneralFragment = new HomeFragment();
             addFragment(false);
-
-        } else if (id == R.id.nav_send) {
 
         }
 

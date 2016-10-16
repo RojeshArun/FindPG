@@ -43,4 +43,6 @@
     <string name="services">Services</string>
     <string name="accommodation">Accommodation</string>
     <string name="today_s_menu">Today\'s Menu</string>
+    <string name="request_a_plate">Request a plate</string>
+    <string name="menu">Menu</string>
 </resources>

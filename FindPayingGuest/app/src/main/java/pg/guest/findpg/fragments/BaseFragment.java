@@ -27,4 +27,20 @@ public class BaseFragment extends Fragment {
 
     }
 
+    /**
+     * Show progress bar
+     */
+    public void showProgressBar() {
+        if (getActivity() != null)
+            ((ContainerActivity) getActivity()).showProgressBar();
+    }
+
+    /**
+     * Hide progress bar
+     */
+    public  void hideProgressBar(){
+        if(getActivity() != null)
+            ((ContainerActivity) getActivity()).hideProgressBar();
+    }
+
 }

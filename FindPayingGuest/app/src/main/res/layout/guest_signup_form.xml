@@ -61,7 +61,9 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_marginLeft="@dimen/medium_padding"
                     android:padding="@dimen/micro_padding"
-                    android:text="@string/male" />
+                    android:text="@string/male"
+                    android:checked="true"
+                    android:id="@+id/radioButton" />
 
                 <RadioButton
                     android:layout_width="wrap_content"
@@ -159,6 +161,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
+                    android:checked="true"
                     android:layout_marginLeft="@dimen/padding"
                     android:text="@string/veg" />
 

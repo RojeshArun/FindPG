@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorAccent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentRight="true"
+            android:layout_toRightOf="@+id/lbl_menu_title"
+            android:src="@drawable/next" />
+
+        <TextView
+            android:id="@+id/lbl_menu_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="Today's Menu"
+            android:textColor="@android:color/white"
+            android:textSize="40sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentLeft="true"
+            android:layout_toLeftOf="@+id/lbl_menu_title"
+            android:src="@drawable/previous" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginLeft="@dimen/padding"
+        android:layout_marginRight="@dimen/padding"
+        android:background="@android:color/white" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/padding"
+        android:padding="@dimen/padding">
+
+        <TextView
+            android:id="@+id/lbl_breakfast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/padding"
+            android:layout_alignTop="@+id/img_breakfast"
+            android:layout_alignBottom="@+id/img_breakfast"
+            android:text="BreakFast"
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lbl_breakfast"
+            android:padding="@dimen/padding"
+            android:text="8:00 AM - 10:30 AM"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/lbl_breakfast_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="@dimen/padding"
+            android:layout_toLeftOf="@+id/img_breakfast"
+            android:layout_toRightOf="@+id/lbl_breakfast"
+            android:text="Idly, Sambar, Dosa &amp; Coconut Chetny"
+            android:textColor="@android:color/white"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/img_breakfast"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentRight="true"
+            android:layout_margin="@dimen/padding"
+            android:src="@drawable/breakfast" />
+
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/padding"
+        android:padding="@dimen/padding">
+
+        <TextView
+            android:id="@+id/lbl_lunch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/padding"
+            android:layout_alignTop="@+id/img_lunch"
+            android:layout_alignBottom="@+id/img_lunch"
+            android:text="Lunch"
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lbl_lunch"
+            android:padding="@dimen/padding"
+            android:text="12:30 PM - 2:30 PM"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/lbl_lunch_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="@dimen/padding"
+            android:layout_toLeftOf="@+id/img_lunch"
+            android:layout_toRightOf="@+id/lbl_lunch"
+            android:text="Chicken Curry , Roti/Rice, Salad, Curd Rice, Sambar"
+            android:textColor="@android:color/white"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/img_lunch"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentRight="true"
+            android:layout_margin="@dimen/padding"
+            android:src="@drawable/lunch" />
+
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/padding"
+        android:padding="@dimen/padding">
+
+        <TextView
+            android:id="@+id/lbl_dinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/padding"
+            android:layout_alignTop="@+id/img_dinner"
+            android:layout_alignBottom="@+id/img_dinner"
+            android:text="Dinner"
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lbl_dinner"
+            android:padding="@dimen/padding"
+            android:text="8:00 PM - 10:30 PM"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/lbl_dinner_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="@dimen/padding"
+            android:layout_toLeftOf="@+id/img_dinner"
+            android:layout_toRightOf="@+id/lbl_dinner"
+            android:text="Chicken Curry , Roti/Rice, Salad, Curd Rice, Sambar, Egg Curry"
+            android:textColor="@android:color/white"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/img_dinner"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentRight="true"
+            android:layout_margin="@dimen/padding"
+            android:src="@drawable/dinner" />
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>

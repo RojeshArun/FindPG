@@ -10,4 +10,5 @@
     <color name="divider">#BDBDBD</color>
 
     <color name="rippelColor">#FFFFFF</color>
+    <color name="semitransperent">#66424242</color>
 </resources>
