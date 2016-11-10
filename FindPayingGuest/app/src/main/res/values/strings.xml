@@ -45,4 +45,5 @@
     <string name="today_s_menu">Today\'s Menu</string>
     <string name="request_a_plate">Request a plate</string>
     <string name="menu">Menu</string>
+    <string name="done">Done</string>
 </resources>

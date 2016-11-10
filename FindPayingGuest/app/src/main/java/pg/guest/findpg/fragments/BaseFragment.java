@@ -13,9 +13,9 @@ public class BaseFragment extends Fragment {
     /**
      * Add a new Fragment
      */
-    public void addFragment(boolean saveFragment) {
+    public void addFragment(Fragment fragment,boolean saveFragment) {
         if (getActivity() != null)
-            ((ContainerActivity) getActivity()).addFragment(saveFragment);
+            ((ContainerActivity) getActivity()).addFragment(fragment, saveFragment);
     }
 
     /**

@@ -1,6 +1,7 @@
 package pg.guest.findpg.activities;
 
 import android.app.SearchManager;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
@@ -21,11 +22,14 @@ import android.widget.LinearLayout;
 
 import pg.guest.findpg.Utils.StaticUtils;
 import pg.guest.findpg.activities.dummy.DummyContent;
+import pg.guest.findpg.fragments.AccommodationFragment;
+import pg.guest.findpg.fragments.FeedbackFragment;
 import pg.guest.findpg.fragments.FoodFragment;
 import pg.guest.findpg.fragments.HomeFragment;
 import pg.guest.findpg.R;
 import pg.guest.findpg.fragments.GuestSignUpFormFragment;
 import pg.guest.findpg.fragments.PgFragment;
+import pg.guest.findpg.fragments.ServicesFragment;
 
 /**
  * Created by Rojesh on 17-08-2016.
@@ -55,6 +59,7 @@ public class ContainerActivity extends AppCompatActivity implements
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        navigationView.setItemBackgroundResource(R.drawable.abc_dialog_material_background_dark);
 
         mProgressBar = (LinearLayout) findViewById(R.id.progressbar);
         showProgressBar();
@@ -81,7 +86,7 @@ public class ContainerActivity extends AppCompatActivity implements
             mGeneralFragment = new PgFragment();
         else
             mGeneralFragment = new HomeFragment();
-        addFragment(false);
+        addFragment(mGeneralFragment, false);
     }
 
     @Override
@@ -100,34 +105,34 @@ public class ContainerActivity extends AppCompatActivity implements
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
-
+        clearStack();
         if (id == R.id.nav_food) {
-          /*  invalidateOptionsMenu();
-            menu.findItem(R.id.action_search).setVisible(false);*/
             mGeneralFragment = new FoodFragment();
-            addFragment(true);
         } else if (id == R.id.nav_services) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
+            mGeneralFragment = new ServicesFragment();
+        } else if (id == R.id.nav_accommodation) {
+            mGeneralFragment = new AccommodationFragment();
+        } else if (id == R.id.nav_feedback) {
+            mGeneralFragment = new FeedbackFragment();
         } else if (id == R.id.nav_share) {
-
             mGeneralFragment = new HomeFragment();
-            addFragment(false);
-
         }
-
+        addFragment(mGeneralFragment, false);
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
 
-    public void addFragment(boolean saveFrag) {
+    private void clearStack() {
+        for (int i = 0; i < getSupportFragmentManager().getBackStackEntryCount(); i++)
+            getSupportFragmentManager().popBackStack();
+    }
+
+    public void addFragment(Fragment mGeneralFragment, boolean saveFrag) {
         mFragmentManager = getSupportFragmentManager();
         mFragmentTransaction = mFragmentManager.beginTransaction();
         mFragmentTransaction.replace(R.id.content_frame, mGeneralFragment);
+        mFragmentTransaction.setCustomAnimations(R.anim.enter_from_right,R.anim.enter_from_left,0,0);
         if (saveFrag)
             mFragmentTransaction.addToBackStack(mFragmentManager.
                     getClass().getName()).commit();
@@ -143,7 +148,7 @@ public class ContainerActivity extends AppCompatActivity implements
         searchView.setVisibility(View.GONE);
         invalidateOptionsMenu();
         StaticUtils.IS_GUEST_LOGIN = false;
-        addFragment(false);
+        addFragment(mGeneralFragment, false);
     }
 
 
@@ -170,4 +175,5 @@ public class ContainerActivity extends AppCompatActivity implements
         }
 
     }
+
 }

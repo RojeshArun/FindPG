@@ -5,11 +5,44 @@
     android:gravity="center_horizontal"
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/lbl_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/today_s_menu" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/lbl_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/btn_next_menu"
+            android:layout_alignTop="@+id/btn_next_menu"
+            android:layout_centerHorizontal="true"
+            android:layout_toLeftOf="@+id/btn_next_menu"
+            android:layout_toRightOf="@+id/btn_previous_menu"
+            android:gravity="center"
+            android:text="@string/today_s_menu"
+            android:textSize="26sp" />
+
+        <ImageView
+            android:id="@+id/btn_previous_menu"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentLeft="true"
+            android:layout_toLeftOf="@+id/lbl_menu_title"
+            android:background="@android:color/black"
+            android:src="@drawable/previous" />
+
+        <ImageView
+            android:id="@+id/btn_next_menu"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:background="@android:color/black"
+            android:src="@drawable/next" />
+
+
+    </RelativeLayout>
 
 
     <LinearLayout
@@ -27,8 +60,8 @@
             <CheckBox
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
-                android:gravity="top"
-                android:background="@drawable/breakfast" />
+                android:background="@drawable/breakfast"
+                android:gravity="top" />
 
 
         </RelativeLayout>
@@ -43,9 +76,8 @@
             <CheckBox
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
-                android:gravity="top"
                 android:background="@drawable/lunch"
-                 />
+                android:gravity="top" />
 
         </RelativeLayout>
 
@@ -59,37 +91,34 @@
             <CheckBox
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
-                android:gravity="top"
                 android:background="@drawable/dinner"
-                 />
+                android:gravity="top" />
         </RelativeLayout>
     </LinearLayout>
 
     <Button
         android:id="@+id/btn_request_plate"
         android:layout_width="match_parent"
-        android:text="@string/request_a_plate"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="@string/request_a_plate" />
 
     <Button
         android:id="@+id/btn_food_menu"
         android:layout_width="match_parent"
-        android:text="@string/menu"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="@string/menu" />
 
     <Button
         android:id="@+id/btn_food_feeback"
         android:layout_width="match_parent"
-        android:text="Food feedback"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="Food feedback" />
 
     <Button
         android:id="@+id/btn_food_confirm"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Confirm"
-        />
-
+        android:text="Confirm" />
 
 
 </LinearLayout>

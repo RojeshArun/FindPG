@@ -17,7 +17,7 @@ import pg.guest.findpg.Utils.StaticUtils;
  * Created by ADMIN on 08-08-2016.
  */
 public class HomeActivity extends AppCompatActivity
-        implements View.OnClickListener{
+        implements View.OnClickListener {
 
     //UI Variables
     private Button mLogin, mGuestBtn, mNewUserBtn;
@@ -64,11 +64,9 @@ public class HomeActivity extends AppCompatActivity
     }
 
     private void showPgFilterPopUp() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-
-       Dialog dialog= builder.create();
+        Dialog dialog = new Dialog(this);
         dialog.setContentView(R.layout.filter_ldialog);
-        Button mButton= (Button) dialog.findViewById(R.id.btn_select);
+        Button mButton = (Button) dialog.findViewById(R.id.btn_select);
         mButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

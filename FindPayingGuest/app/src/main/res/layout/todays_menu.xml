@@ -9,21 +9,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <ImageView
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_alignParentRight="true"
-            android:layout_toRightOf="@+id/lbl_menu_title"
-            android:src="@drawable/next" />
-
         <TextView
             android:id="@+id/lbl_menu_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:text="Today's Menu"
+            android:padding="@dimen/padding"
             android:textColor="@android:color/white"
-            android:textSize="40sp"
+            android:textSize="36sp"
             android:textStyle="bold" />
 
         <ImageView
@@ -32,6 +26,15 @@
             android:layout_alignParentLeft="true"
             android:layout_toLeftOf="@+id/lbl_menu_title"
             android:src="@drawable/previous" />
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/next"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:id="@+id/imageView2" />
     </RelativeLayout>
 
     <View
